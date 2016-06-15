@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+ <link rel="shortcut icon" type="image/x-icon" href="http://images.315ok.org/xtshzz/images/favicon.ico" />
+    <title>湘潭社会组织管理信息网</title>
+		<link class="authenticated-load" 
+		href="http://images.315ok.org/plone434/css/form.css" rel="stylesheet"/>
+		<link class="authenticated-load" 
+		href="http://images.315ok.org/plone434/css/tinymce.css" rel="stylesheet"/>			
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="dist/css/xtshzz.bootstrap.min.css"> 
+ <!--     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+ <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <link href="http://images.315ok.org/xtshzz/custom.minv5.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/html5shiv.js"></script>
+      <script src="dist/js/respond.min.js"></script>
+    <![endif]-->
+        <script src="http://images.315ok.org/jquery-1.10.2.min.js"></script>
+    </head>
+<body>
+	<header role="banner" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button data-target="#topnav-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.xtshzz.org/">
+      	<img width="29" height="24" src="http://images.315ok.org/xtshzz/images/brand.png" alt="湘潭社会组织"></a>
+    </div>
+    <nav role="navigation" id="topnav-collapse" class="collapse navbar-collapse">
+      <ul id="nav" class="nav navbar-nav">
+        <li class="active">
+          <a href="../getting-started">快速上手</a>
+        </li>
+        <li>
+          <a href="../css">基础CSS</a>
+        </li>
+        <li>
+          <a href="../components">组件</a>
+        </li>
+        <li>
+          <a href="../javascript">JavaScript插件</a>
+        </li>
+        <li>
+          <a href="../customize">定制</a>
+        </li>
+      </ul>
+      <form id="topsearchbox" class="navbar-form navbar-left hidden-xs" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control search-query" name="SearchableText" placeholder="Search"/>        
+      </div>
+      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
+			</button>
+    </form>      
+      <ul id="secondary-nav" class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id="personaltool-menuheader">Dropdown</span><b class="caret"></b></a>
+        <ul class="dropdown-menu" id="personaltool-menu">
+          <li><a href="#">动作</a></li>
+          <li><a href="#">另外动作</a></li>
+          <li><a href="#">其他动作</a></li>
+          <li class="divider"></li>
+          <li><a href="#">带分割符的链接</a></li>
+        </ul>
+        </li>
+      </ul>     
+    </nav>
+  </div>
+	</header>
+  <div class="container">      		
+       <div id="headerlogo" class="row">
+       	<div class="hidden-xs col-sm-12">
+       		<div class="no-padding">
+             <img class="left" width="329" height="136" src="http://images.315ok.org/xtshzz/images/logo.jpg" alt="logo" />
+            	<img  class="right" width="672" height="135" src="http://images.315ok.org/xtshzz/images/header.jpg" alt="banner"/>               
+       </div>
+       </div>
+       </div>
+  </div>
+  <div id="container" class="container">
+  		<div id="main" role="main" class="icons-off">
+               <div class="crumb">
+                  <ul class="breadcrumb">
+                     <li><a href="#">Home</a><span class="divider">/</span></li>
+                     <li class="active">Plone</li>
+                  </ul>
+               </div>
+               <div id="content-columns">
+                  <div class="row">
+                     <div id="left-column" class="col-md-3">
+                        <div id="left-column-content">
+                        <section>
+                           <h4 class="portlet-header">Navigation</h4>
+                           <div>
+                              <ul class="navTree navTreeLevel0">
+                                 <li class="navTreeItem navTreeTopNode">
+                                 <div>
+                                    <a title="" class="contenttype-plone-site " href="#">
+                                       Home
+                                    </a>
+                                 </div>
+                                 </li>
+                                 <li class="navTreeItem visualNoMarker navTreeFolderish section-news">
+                                 <a title="Site News" class="state-published navTreeFolderish contenttype-folder" href="#">
+                                    <span>News</span>
+                                 </a>
+                                 </li>
+                                 <li class="navTreeItem visualNoMarker navTreeCurrentNode navTreeFolderish section-events">
+                                 <a title="Site Events" class="state-published navTreeCurrentItem navTreeCurrentNode navTreeFolderish contenttype-folder" href="#">
+                                    <span>Events</span>
+                                 </a>
+                                 <ul class="navTree navTreeLevel1">
+                                    <li class="navTreeItem visualNoMarker section-fedora-activity-day">
+                                    <a title="" class="state-private contenttype-event" href="#">
+                                       <span>Fedora Activity Day</span>
+                                    </a>
+                                    </li>
+                                 </ul>
+                                 </li>
+                                 <li class="navTreeItem visualNoMarker navTreeFolderish section-members">
+                                 <a title="Site Users" class="state-published navTreeFolderish contenttype-folder" href="#">
+                                    <span>Users</span>
+                                 </a>
+                                 </li>
+                                 <li class="navTreeItem visualNoMarker navTreeFolderish section-services">
+                                 <a title="" class="state-private navTreeFolderish contenttype-folder" href="#">
+                                    <span>Services</span>
+                                 </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </section>
+                        </div>
+                     </div>
+                     <div id="center-column">
+                        <div id="center-column-content">
+                        <article>
+                           <div id="content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis erat dolor,
+                              ut tristique ante. Ut rutrum diam et odio interdum luctus. Curabitur convallis
+                              dolor non lacus auctor vitae varius odio dignissim. Pellentesque aliquam
+                              condimentum magna, et placerat orci pretium et. Cras et erat sit amet elit
+                              ultrices scelerisque. Etiam vehicula mauris ac tortor convallis id mollis urna
+                              egestas. Proin lobortis diam sit amet diam ultrices facilisis vitae volutpat
+                              ligula. Quisque nec tellus ac libero pellentesque viverra. Cras at elit justo.
+                              Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                              turpis egestas. Maecenas leo erat, ullamcorper eget venenatis eu, porttitor nec
+                              orci. Praesent rhoncus auctor nulla. Nulla dictum semper ornare.</p>
+                              <p>
+                              Vestibulum volutpat scelerisque accumsan. Aliquam euismod felis eu erat
+                              lobortis vestibulum. Nullam accumsan, orci non dignissim tempus, risus erat
+                              porta dolor, at viverra magna sapien non lacus. Aliquam scelerisque varius
+                              erat, ac placerat felis ultricies quis. Nunc vel imperdiet lorem. Curabitur
+                              consectetur urna in ipsum mollis elementum. Praesent vitae metus justo.
+                              Vestibulum eu ipsum nec justo semper posuere at id lectus. Quisque nulla augue,
+                              congue vitae hendrerit id, euismod nec orci. Class aptent taciti sociosqu ad
+                              litora torquent per conubia nostra, per inceptos himenaeos. Sed feugiat massa
+                              varius libero sodales eget lacinia odio ultrices. Vestibulum ante ipsum primis
+                              in faucibus orci luctus et ultrices posuere cubilia Curae; Duis accumsan
+                              egestas metus id iaculis. Aliquam ut diam massa. Morbi viverra tortor non massa
+                              congue facilisis.</p>
+                              <p>
+                              Suspendisse id condimentum mauris. Curabitur suscipit diam enim, vel
+                              consectetur mi. Curabitur quis est a justo malesuada condimentum laoreet et
+                              orci. Nullam commodo, libero et ultrices interdum, tellus tellus ultrices elit,
+                              id condimentum sapien nisi id nibh. Quisque mattis lectus eget dui ornare eget
+                              eleifend lectus ornare. </p>
+                           </div>
+                        </article>
+                        </div>
+                     </div>
+                     <div id="right-column" class="col-md-3">
+                        <div id="right-column-content">
+                        <section>
+                           <h4 class="portlet-header">Calendar</h4>
+                           <div>
+                              <table summary="Calendar" class="ploneCalendar">
+                                 <caption
+                                    class="hiddenStructure">November</caption>
+                                 <thead>
+                                    <tr
+                                       class="weekdays"><th
+                                          scope="col">Su</th><th
+                                          scope="col">Mo</th><th
+                                          scope="col">Tu</th><th
+                                          scope="col">We</th><th
+                                          scope="col">Th</th><th
+                                          scope="col">Fr</th><th
+                                          scope="col">Sa</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                                    </tr>
+                                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                                    </tr>
+                                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td
+                                          class="todaynoevent"><strong>17</strong></td><td>18</td><td>19</td>
+                                    </tr>
+                                    <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                                    </tr>
+                                    <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </section>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div> <!--! end of #container -->                        
+            <footer class="footer container">
+            	<div class="row">
+                  <div class="friendlybg col-sm-12">                  	
+            	<div class="text-center copyright">
+							<p>湘潭市民间组织管理处 湘潭市社会组织促进会主办</p>
+							<p>ICP备案： <a href="#">湘ICP备14006760号</a></p>
+							<p>技术支持：<a href="http://plone.315ok.org/">湖南通联文化传媒</a>
+								协作：<a href="http://plone.315ok.org/">Plone技术论坛</a>
+							</p>
+						</div>
+						</div>             
+              </div>                        		
+            	</footer>
+            	<!-- anonymous load js resource-->
+            <div id="anonymous-load">
+<!--             <script src="http://images.315ok.org/bootstrapthemes/js/plone-login.js"></script> -->
+             <script src="http://images.315ok.org/bootstrapthemes/js/table_sorter.js"></script>
+            </div>
+<!--         <script src="++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js"></script>
+             <script src="++resource++plone.formwidget.autocomplete/formwidget-autocomplete.js"></script>                          
+           -->                                                  	
+            <div id="hasleftcol">
+            <script src="http://images.315ok.org/bootstrapthemes/js/mk_div_sameheight.js"></script>                        	
+            </div>             
+            <!-- login user load js resources-->
+            <div class="authenticated-load">
+             <script src="http://images.315ok.org/plone434/js/jquery.tinymce.js"></script>                                       	
+             <script src="http://images.315ok.org/plone434/js/tiny_mce_gzip.js"></script>
+             <script src="http://images.315ok.org/bootstrapthemes/js/table_sorter.js"></script>             
+            </div>          
+            <!-- JavaScript at the bottom for fast page loading -->   
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script>$('.dropdown-toggle').dropdown();$(".dropdown-menu").on("click","a.state-missing-value",function(){var url=$(this).attr("href");window.location.href=url+"/@@view";return false});$("li").on("click","a.navTreeFolderish",function(){var url=$(this).attr("href");window.location.href=url+"/@@view";return false});</script>
+  </body>
+</html>

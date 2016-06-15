@@ -1,0 +1,11 @@
+<layers>
+    
+    <!-- Disable the Theme layer when uninstalled -->
+    
+    <layer
+        name="collective.diazotheme.bootstrap"
+        interface="collective.diazotheme.bootstrap.browser.interfaces.IThemeSpecific"
+        remove="True"
+        />
+
+</layers>
