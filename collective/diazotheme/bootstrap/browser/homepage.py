@@ -1,26 +1,20 @@
 #-*- coding: UTF-8 -*-
-from five import grok
 import json
 import datetime
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
-
-from plone.memoize.instance import memoize
-
-from zope.i18n.interfaces import ITranslationDomain
-from zope.component import queryUtility
 from zope.component import getMultiAdapter
-
-from Products.CMFCore.interfaces import ISiteRoot
 from Products.Five.browser import BrowserView
-from plone.app.layout.navigation.interfaces import INavigationRoot
-
 from my315ok.socialorgnization import _
-
 from my315ok.products.product import Iproduct
 from plone.app.collection.interfaces import ICollection
-
 from plone.memoize.instance import memoize
+
+import socket
+import time
+import urllib2
+__version__ = 3.1
+
 
 fmt = '%Y/%m/%d %H:%M:%S'
 import re
@@ -38,17 +32,206 @@ except:
     print "or directly from http://www.crummy.com/software/BeautifulSoup/"
     print
     raise
-from my315ok.portlet.fetchouterhtml.fetchouterportlet import FetchOutWebPage
+# from my315ok.portlet.fetchouterhtml.fetchouterportlet import FetchOutWebPage
+
+class FetchOutWebPage(object):
+    """
+    This class provides a custom, unofficial API to the Delicious.com service.
+
+    Instead of using just the functionality provided by the official
+    Delicious.com API (which has limited features), this class retrieves
+    information from the Delicious.com website directly and extracts data from
+    the Web pages.
+
+    Note that Delicious.com will block clients with too many queries in a
+    certain time frame (similar to their API throttling). So be a nice citizen
+    and don't stress their website.
+
+    """
+
+    def __init__(self,
+                    http_proxy="",
+                    tries=2,
+                    wait_seconds=3,
+                    user_agent="Firefox/%s" % __version__,
+                    timeout=30,
+        ):
+        """Set up the API module.
+
+        @param http_proxy: Optional, default: "".
+            Use an HTTP proxy for HTTP connections. Proxy support for
+            HTTPS is not available yet.
+            Format: "hostname:port" (e.g., "localhost:8080")
+        @type http_proxy: str
+
+        @param tries: Optional, default: 3.
+            Try the specified number of times when downloading a monitored
+            document fails. tries must be >= 1. See also wait_seconds.
+        @type tries: int
+
+        @param wait_seconds: Optional, default: 3.
+            Wait the specified number of seconds before re-trying to
+            download a monitored document. wait_seconds must be >= 0.
+            See also tries.
+        @type wait_seconds: int
+
+        @param user_agent: Optional, default: "DeliciousAPI/<version>
+            (+http://www.michael-noll.com/wiki/Del.icio.us_Python_API)".
+            The User-Agent HTTP Header to use when querying Delicous.com.
+        @type user_agent: str
+
+        @param timeout: Optional, default: 30.
+            Set network timeout. timeout must be >= 0.
+        @type timeout: int
+
+        """
+        assert tries >= 1
+        assert wait_seconds >= 0
+        assert timeout >= 0
+        self.http_proxy = http_proxy
+        self.tries = tries
+        self.wait_seconds = wait_seconds
+        self.user_agent = user_agent
+        self.timeout = timeout
+        socket.setdefaulttimeout(self.timeout)
+
+    def _query(self, host="http://delicious.com/", user=None, password=None):
+        """Queries Delicious.com for information, specified by (query) path.
+
+        @param path: The HTTP query path.
+        @type path: str
+
+        @param host: The host to query, default: "delicious.com".
+        @type host: str
+
+        @param user: The Delicious.com username if any, default: None.
+        @type user: str
+
+        @param password: The Delicious.com password of user, default: None.
+        @type password: unicode/str
+
+        @param use_ssl: Whether to use SSL encryption or not, default: False.
+        @type use_ssl: bool
+
+        @return: None on errors (i.e. on all HTTP status other than 200).
+            On success, returns the content of the HTML response.
+
+        """
+        opener = None
+        handlers = []
+
+        # add HTTP Basic authentication if available
+        if user and password:
+            pwd_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+            pwd_mgr.add_password(None, host, user, password)
+            basic_auth_handler = urllib2.HTTPBasicAuthHandler(pwd_mgr)
+            handlers.append(basic_auth_handler)
+
+        # add proxy support if requested
+        if self.http_proxy:
+            proxy_handler = urllib2.ProxyHandler({'http': 'http://%s' % self.http_proxy})
+            handlers.append(proxy_handler)
+
+        if handlers:
+            opener = urllib2.build_opener(*handlers)
+        else:
+            opener = urllib2.build_opener()
+        opener.addheaders = [('User-agent', self.user_agent)]
+
+        data = None
+        tries = self.tries       
+        url = host
+#        url = "http://list.mp3.baidu.com/index.html"
+
+        while tries > 0:
+            try:
+                f = opener.open(url)
+                data = f.read()
+                f.close()
+                break
+            except urllib2.HTTPError, e:                
+                break
+            except urllib2.URLError, e:
+                time.sleep(self.wait_seconds)
+            except socket.error, msg:
+                # sometimes we get a "Connection Refused" error
+                # wait a bit and then try again
+                time.sleep(self.wait_seconds)         
+            tries -= 1
+        return data
+
+    def _tidysrc(self,data,srccode):
+        """tidy scribe the html src"""
+
+        try:
+            from tidylib import tidy_document
+            BASE_OPTIONS = {
+    "output-xhtml": 1,     # XHTML instead of HTML4
+    "indent": 1,           # Pretty; not too much of a performance hit
+    "tidy-mark": 0,        # No tidy meta tag in output
+    "wrap": 0,             # No wrapping
+    "alt-text": "",        # Help ensure validation
+    "doctype": 'strict',   # Little sense in transitional for tool-generated markup...
+    "force-output": 1,     # May not get what you expect but you will get something
+    "char-encoding":'utf-8',
+    "input-encoding":srccode,
+    "output-encoding":'utf-8',
+    }
+            if not isinstance(data, unicode):                
+                try:
+                    data = data.decode(srccode)
+                except:
+                    pass
+            doc, errors = tidy_document(data,options={'numeric-entities':1})
+            return doc
+        except:
+            return data
+        
+    def _extract_data(self,data,tag=None,cssid=None,cssclass=None,attrs=None,regexp=None,index=0):
+        """
+        Extracts user bookmarks from a URL's history page on Delicious.com.
+
+        The Python library BeautifulSoup is used to parse the HTML page.
+
+        @param data: The HTML source of a URL history Web page on Delicious.com.
+        @type data: str
+
+        @return: list of user bookmarks of the corresponding URL
+
+        """
+        
+#        cssclass = "song"
+#        cssid = "newsTable0"
+#        tag = "div"
+#        import pdb
+#        pdb.set_trace()        
+        
+        if cssid:   
+            searchconstrain = SoupStrainer(tag, id=cssid)
+        elif cssclass:
+            searchconstrain = SoupStrainer(tag, attrs={"class":cssclass})            
+        else:
+            if  isinstance(attrs, unicode):
+                try:
+                    attrs = attrs.encode('utf-8')
+                    regexp = regexp.encode('utf-8')
+                except:
+                    pass                
+            searchconstrain = SoupStrainer(tag, attrs={attrs:re.compile(regexp)})
+
+        soup = BeautifulSoup(data,parseOnlyThese=searchconstrain)
+        rslist = [ tp for tp in soup ]
+        return rslist[index]
 
 from Products.CMFCore import permissions
-grok.templatedir('templates') 
 
-class HomepageView(grok.View):
+
+class HomepageView(BrowserView):
      
-    grok.context(ISiteRoot)
-    grok.template('homepage')
-    grok.name('homepage')
-    grok.require('zope2.View')    
+#     grok.context(ISiteRoot)
+#     grok.template('homepage')
+#     grok.name('homepage')
+#     grok.require('zope2.View')    
     
     def update(self):
         # Hide the editable-object border
@@ -79,6 +262,8 @@ class HomepageView(grok.View):
         context = aq_inner(self.context)
         pview = getMultiAdapter((context,self.request),name=u"plone")
 #        pview = getMultiAdapter((self.parent(), self.request), name=u'earthqk_event_view')
+#         import pdb
+#         pdb.set_trace()
         croped = pview.cropText(text, length)
         return croped
             
@@ -246,15 +431,14 @@ class HomepageView(grok.View):
         """return roll zone html"""
         
         if collection == None:
-            braindata = self.catalog()({'meta_type':'ATNewsItem',
+            braindata = self.catalog()({'portal_type':'News Item',
                                     'b_start':0,
                                     'b_size':limit,
                              'sort_order': 'reverse',
                              'sort_on': 'created'})
         else:
 
-            queries = {'object_provides':ICollection.__identifier__, 
-                                    'id':collection}
+            queries = {'portal_type':'Collection','id':collection}
             ctobj = self.catalog()(queries)
             if ctobj is not None:
                 # pass on batching hints to the catalog
@@ -269,7 +453,9 @@ class HomepageView(grok.View):
         if brainnum == 0 : return "roll zone"
         for i in range(brainnum):
             objurl = braindata[i].getURL()
-            objtitle = braindata[i].Title
+            objtitle = braindata[i].Title()
+            
+
             objtitle = self.cropTitle(objtitle, words)
             modifydate = braindata[i].modified.strftime('%Y-%m-%d')
             
@@ -598,8 +784,7 @@ class HomepageView(grok.View):
     def collection_url(self,target_collection):
         if not target_collection:
             return None
-        queries = {'object_provides':ICollection.__identifier__, 
-                                    'id':target_collection}
+        queries = {'portal_type':'Collection','id':target_collection}
         ctobj = self.catalog()(queries)
         return ctobj[0].getPath()        
         
@@ -609,9 +794,10 @@ class HomepageView(grok.View):
 #        collection_path = target_collection
         if not target_collection:
             return None
-        queries = {'object_provides':ICollection.__identifier__, 
-                                    'id':target_collection}
+        queries = {'portal_type':'Collection','id':target_collection}
         ctobj = self.catalog()(queries)
+#         import pdb
+#         pdb.set_trace()
         if ctobj is not None:
                 # pass on batching hints to the catalog
             braindata = ctobj[0].getObject().queryCatalog(batch=True, b_size=limit, sort_on="created")

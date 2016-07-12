@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '2.0'
 
 setup(name='collective.diazotheme.bootstrap',
       version=version,
@@ -25,9 +25,7 @@ setup(name='collective.diazotheme.bootstrap',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'five.grok',          
           'plone.app.theming',
-          'plone.app.themingplugins',
           'z3c.caching',   
           # -*- Extra requirements: -*-
       ],

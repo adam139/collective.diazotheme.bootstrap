@@ -1,26 +1,21 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser"              
            xmlns:five="http://namespaces.zope.org/five">           
-    <interface
-        interface=".interfaces.IThemeSpecific" 
-        type="zope.publisher.interfaces.browser.IBrowserSkinType" 
-        name="collective.diazotheme.bootstrap" />
 
+  <browser:page
+      for="*"
+      name="main_template"
+      class=".main_template.MainTemplate"
+      layer="collective.diazotheme.bootstrap.interfaces.IThemeSpecific"         
+      permission="zope.Public"
+/>
            
-    <browser:viewlet  
-        name="plone.resourceregistries" 
-        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
-        template="resourceregistries.pt"
-        layer=".interfaces.IThemeSpecific"         
-        permission="zope2.View" 
-        />
-<!--
-    <browser:viewletManager
-        name="plone.resourceregistries.scripts"
-        provides="Products.ResourceRegistries.interfaces.IHtmlHeadScripts"
-        template="Products.ResourceRegistries.browser.scripts.pt"
-        layer=".interfaces.IThemeSpecific" 
-        permission="zope2.View"
-        />
-        -->
+  <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="homepage"
+      permission="zope.Public"
+      layer="collective.diazotheme.bootstrap.interfaces.IThemeSpecific"       
+      template="templates/homepage.pt"
+/> 
+
 </configure>	        

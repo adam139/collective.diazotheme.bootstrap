@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0 (for Plone5)
+-------------------
+
+- support for Plone5
+
 1.0dev (unreleased)
 -------------------
 

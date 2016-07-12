@@ -1,8 +1,8 @@
-import unittest2 as unittest
+import  unittest
 import transaction
 
-from collective.diazotheme.bootstrap.testing import MY315OK_DIAZO960_INTEGRATION_TESTING
-from collective.diazotheme.bootstrap.testing import MY315OK_DIAZO960_FUNCTION_TESTING
+from collective.diazotheme.bootstrap.testing import INTEGRATION_TESTING
+from collective.diazotheme.bootstrap.testing import FUNCTION_TESTING
 
 from plone.testing.z2 import Browser
 from plone.app.testing import SITE_OWNER_NAME
@@ -16,7 +16,7 @@ from plone.app.theming.interfaces import IThemeSettings
 
 class TestSetup(unittest.TestCase):
     
-    layer = MY315OK_DIAZO960_FUNCTION_TESTING
+    layer = FUNCTION_TESTING
     
 #    def test_css_registry_configured(self):
 #        portal = self.layer['portal']

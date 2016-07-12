@@ -1,8 +1,8 @@
-import unittest2 as unittest
+import unittest
 import transaction
 
-from collective.diazotheme.bootstrap.testing import MY315OK_DIAZO960_INTEGRATION_TESTING
-from collective.diazotheme.bootstrap.testing import MY315OK_DIAZO960_FUNCTION_TESTING
+from collective.diazotheme.bootstrap.testing import INTEGRATION_TESTING
+from collective.diazotheme.bootstrap.testing import FUNCTION_TESTING
 
 from plone.testing.z2 import Browser
 from plone.app.testing import SITE_OWNER_NAME
@@ -16,22 +16,16 @@ from plone.app.theming.interfaces import IThemeSettings
 
 class TestSetup(unittest.TestCase):
     
-    layer = MY315OK_DIAZO960_INTEGRATION_TESTING
+    layer = INTEGRATION_TESTING
     
-#    def test_css_registry_configured(self):
-#        portal = self.layer['portal']
-#        cssRegistry = getToolByName(portal, 'portal_css')
-#        self.assertTrue("++theme++collective.diazotheme.bootstrap/css/grid.css" 
-#                in cssRegistry.getResourceIds()
-#            )
-#        self.assertTrue("++theme++collective.diazotheme.bootstrap/css/theme.css"
-#                in cssRegistry.getResourceIds()
-#            )
+
     
     def test_theme_configured(self):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IThemeSettings)
         self.assertEqual(settings.enabled, True)
+        import pdb
+        pdb.set_trace()
         self.assertEqual(settings.rules, 
                 "/++theme++collective.diazotheme.bootstrap/rules.xml"
             )
@@ -41,7 +35,7 @@ class TestSetup(unittest.TestCase):
 
 class TestRendering(unittest.TestCase):
     
-    layer = MY315OK_DIAZO960_FUNCTION_TESTING
+    layer = FUNCTION_TESTING
     
     def test_render_plone_page(self):
         app = self.layer['app']
@@ -53,19 +47,6 @@ class TestRendering(unittest.TestCase):
         #open('/tmp/test.html','w').write(browser.contents)    
         browser.open(portal.absolute_url())
         self.assertTrue('<div id="site-scripts">' in browser.contents)
-
-#    def test_manage_portlets_page(self):
-#        app = self.layer['app']
-#        portal = self.layer['portal']
-#        
-#        transaction.commit()
-#        
-#        browser = Browser(app)
-#        browser.addHeader('Authorization', 'Basic %s:%s' % (SITE_OWNER_NAME, SITE_OWNER_PASSWORD,))
-#        
-#        browser.open(portal.absolute_url() + '/@@manage-portlets')
-#        
-#        self.assertFalse('<h2 class="myportlets" i18n:translate="" >Manage mylogo portalheader Portlets</h2>' in browser.contents)        
     
                 
     def test_render_zmi_page(self):

@@ -1,29 +1,34 @@
 <configure 
     xmlns="http://namespaces.zope.org/zope"  
     xmlns:plone="http://namespaces.plone.org/plone"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:grok="http://namespaces.zope.org/grok"    
     i18n_domain="collective.diazotheme.bootstrap">
 
-  <includeDependencies package="." />
-  <grok:grok package="." />          
+
+  <include package="plone.app.theming" />  
+      
  
   <include package="Products.CMFCore" file="permissions.zcml" />
 
-  <plone:static directory="static" type="theme" 
-      name="collective.diazotheme.bootstrap"/>
-      
-  <cmf:registerDirectory name="diazotheme_bootstrap_custom"/>
   
   <genericsetup:registerProfile
       name="default"
       title="collective.diazotheme.bootstrap"
       directory="profiles/default"
-      description='Skin overrides for collective.diazotheme.bootstrap'
+      description='Diazo theme for collective.diazotheme.bootstrap'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+  <genericsetup:registerProfile
+      name="registerless"
+      title="emctheme Theme - Register less resources as variables"
+      directory="profiles/registerless"
+      description='This enables the compilation with the default scripts for custom Diazo themes.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <!-- Diazo themes -->
+  <plone:static directory="theme" name="collective.diazotheme.bootstrap" type="theme"/>  
   <genericsetup:registerProfile
       name="uninstall"
       title="collective.diazotheme.bootstrap"

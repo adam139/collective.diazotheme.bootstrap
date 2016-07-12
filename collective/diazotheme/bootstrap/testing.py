@@ -6,7 +6,7 @@ from plone.app.testing import FunctionalTesting
 
 from zope.configuration import xmlconfig
 
-class My315okDiaozo960(PloneSandboxLayer):
+class Base(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
     
@@ -18,6 +18,6 @@ class My315okDiaozo960(PloneSandboxLayer):
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'collective.diazotheme.bootstrap:default')
 
-MY315OK_DIAZO960_FIXTURE = My315okDiaozo960()
-MY315OK_DIAZO960_INTEGRATION_TESTING = IntegrationTesting(bases=(MY315OK_DIAZO960_FIXTURE,), name="My315okDiaozo960:Integration")
-MY315OK_DIAZO960_FUNCTION_TESTING = FunctionalTesting(bases=(MY315OK_DIAZO960_FIXTURE,), name="My315okDiaozo960:Functional")
+FIXTURE = Base()
+INTEGRATION_TESTING = IntegrationTesting(bases=(FIXTURE,), name="Diazotheme:Integration")
+FUNCTION_TESTING = FunctionalTesting(bases=(FIXTURE,), name="Diazotheme:Functional")
