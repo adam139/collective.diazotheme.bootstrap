@@ -453,18 +453,19 @@ class HomepageView(BrowserView):
         if brainnum == 0 : return "roll zone"
         for i in range(brainnum):
             objurl = braindata[i].getURL()
-            objtitle = braindata[i].Title()
+            fulltitle = braindata[i].Title()
             
 
-            objtitle = self.cropTitle(objtitle, words)
+            objtitle = self.cropTitle(fulltitle, words)
             modifydate = braindata[i].modified.strftime('%Y-%m-%d')
             
             out = """<li class="rollitem">
             <span>
-            <a href="%(objurl)s" title="%(title)s">%(title)s</a>
+            <a href="%(objurl)s" title="%(fulltitle)s">%(title)s</a>
             </span>
-            <span class="portletItemDetails">%(date)s</span></li>""" % dict(objurl=objurl,
+            <span class="portletItemDetails">%(date)s</span></li>""" % dict(objurl=objurl,                                                                            
                                             title=objtitle,
+                                            fulltitle = fulltitle,
                                             date= modifydate)
                                                
             outhtml = ''.join([outhtml,out])   #quick concat string

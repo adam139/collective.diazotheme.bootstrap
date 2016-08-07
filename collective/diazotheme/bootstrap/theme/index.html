@@ -17,12 +17,12 @@
     <link rel="apple-touch-icon-precomposed"
           href="barceloneta-apple-touch-icon-precomposed.png" />
       <link rel="stylesheet" href="http://image4024.wicp.net:8080/emcstatic/dist/css/bootstrap.min.css"/> 
-      <link href="http://images.315ok.org/xtshzz/custom.minv5.css" rel="stylesheet">               
+      <link href="http://images.315ok.org/xtshzz/custom.minv6.css" rel="stylesheet">               
   </head>
   <body>
     <section id="portal-toolbar">
     </section>    
-    <div class="outer-wrapper">
+    <div class="outer-wrapper">    	
       <nav id="content-header" role="navigation" class="plone-navbar  navbar-fixed-top">
       	  <div class="container-fluid">
       	  <div class="navbar-header">
@@ -71,11 +71,21 @@
     </div>
     </div>    	
     </nav>
-      <div id="above-content-wrapper" class="container-fluid">
+    	<div class="container-fluid">      		
+       	<div id="headerlogo" class="row">
+       	<div class="hidden-xs col-sm-12">
+       		<div class="no-padding">
+             <img class="left" width="329" height="136" src="http://images.315ok.org/xtshzz/images/logo.jpg" alt="logo" />
+            	<img  class="right" width="672" height="135" src="http://images.315ok.org/xtshzz/images/header.jpg" alt="banner"/>               
+       	</div>
+       	</div>
+       	</div>
+  		</div>    
+    <div id="above-content-wrapper" class="container-fluid">
           <div id="above-content">
           </div>
-      </div>
-      <div class="container-fluid">
+    </div>
+    <div class="container-fluid">
         <div class="row">
           <aside id="global_statusmessage"></aside>
         </div>
@@ -90,24 +100,9 @@
       </div><!--/container-->
     </div> <!--/outer-wrapper -->
     <footer id="portal-footer-wrapper" role="contentinfo">
-      <div class="container-fluid" id="portal-footer"></div>
+      <div class="footer container-fluid" id="portal-footer"></div>
     </footer>
-<!--
-<script src="http://image4024.wicp.net:8080/emcstatic/dist/js/bootstrap.min.js"></script>     
 
-<script>
-$(document).ready(function(){  	
-$('.collapse-control').on('click', function () {
-var willshow = $(this).find('.hidden');
-var willhide = $(this).find('.shown');
- willshow.removeClass('hidden').addClass('shown');
- willhide.removeClass('shown').addClass('hidden');
-});
-//$('.dropdown-toggle').dropdown();
-$('a[href^="http://mw4024.wicp.net:8089/"]').attr('target','_blank').attr('class','outputlink');
-   });     	
-</script>
--->
     <div class="hidden" id="site-scripts"><!--plone bottom js resources --></div>
   </body>
 </html>

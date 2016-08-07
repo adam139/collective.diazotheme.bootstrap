@@ -3238,41 +3238,62 @@ body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-event:before {
 body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-news-item:before {
   content: '\e80f';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.projectfolder:before {
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-administrativelicencefolder:before {
   content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.project:before {
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-shaoshanshifolder:before {
   content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.team:before {
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-shibenjifolder:before {
   content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.analysisdoc:before {
-  content: '\e805';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-xiangtanxianfolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.auditdoc:before {
-  content: '\e805';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-xiangxiangshifolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.designdoc:before {
-  content: '\e805';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-yuetangqufolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.project.diagnosedoc:before {
-  content: '\e805';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-yuhuqufolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.memberarea.messagebox:before {
-  content: '\e802';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-annualsurveyfolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.memberarea.inputbox:before {
-  content: '\e802';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-governmentorgnization:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.memberarea.outputbox:before {
-  content: '\e802';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-orgnization:before {
+  content: '\e823';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.memberarea.message:before {
-  content: '\e803';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-orgnizationfolder:before {
+  content: '\e801';
 }
-body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-emc.memberarea.fearture:before {
-  content: '\e800';
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-orgnizationsurvey:before {
+  content: '\e816';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-orgnizationadministrative:before {
+  content: '\e826';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-socialorgnization-page:before {
+  content: '\e80e';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-dexterity-membrane-memberfolder:before {
+  content: '\e804';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-dexterity-membrane-sponsormember:before {
+  content: '\e807';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-dexterity-membrane-organizationmember:before {
+  content: '\e824';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype-my315ok-products-product:before {
+  content: '\e810';
+}
+body#visual-portal-wrapper.pat-plone .outer-wrapper .contenttype--my315ok-products-productfolder:before {
+  content: '\e818';
 }
 body#visual-portal-wrapper.pat-plone #edit-zone [class*="contenttype-"] {
   padding: 5px 15px 5px 50px;
@@ -3318,6 +3339,63 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-event:after {
 }
 body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
   content: '\e80f';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-administrativelicencefolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-shaoshanshifolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-shibenjifolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-xiangtanxianfolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-xiangxiangshifolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-yuetangqufolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-yuhuqufolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-annualsurveyfolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-governmentorgnization:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-orgnization:after {
+  content: '\e823';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-orgnizationfolder:after {
+  content: '\e801';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-orgnizationsurvey:after {
+  content: '\e816';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-orgnizationadministrative:after {
+  content: '\e826';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-socialorgnization-page:after {
+  content: '\e80e';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-dexterity-membrane-memberfolder:after {
+  content: '\e804';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-dexterity-membrane-sponsormember:after {
+  content: '\e807';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-dexterity-membrane-organizationmember:after {
+  content: '\e824';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-my315ok-products-product:after {
+  content: '\e810';
+}
+body#visual-portal-wrapper.pat-plone #edit-zone .contenttype--my315ok-products-productfolder:after {
+  content: '\e818';
 }
 .image-icon,
 .image-tile {
@@ -4076,8 +4154,8 @@ a.plone-toolbar-logo {
   }
 }
 #portal-footer-wrapper {
-  padding: 30px 15px;
-  background-color: #2e3133;
+  padding: 0;
+  background-color: #FFF;
   color: #cccccc;
   text-align: center;
   clear: both;
@@ -4095,6 +4173,18 @@ a.plone-toolbar-logo {
 }
 #portal-footer-wrapper a:hover {
   color: #57beef;
+}
+#portal-footer-wrapper .linkzone {
+  color: #FFF;
+}
+#portal-footer-wrapper .linkzone a {
+  color: #ffffff;
+}
+#portal-footer-wrapper .linkzone a:hover {
+  color: #57beef;
+}
+#portal-footer-wrapper .homepage-footer {
+  color: #000;
 }
 #portal-footer-wrapper .portletWrapper {
   display: inline-block;
