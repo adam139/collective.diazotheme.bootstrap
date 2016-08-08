@@ -31,7 +31,7 @@
   <plone:static directory="theme" name="collective.diazotheme.bootstrap" type="theme"/>  
   <genericsetup:registerProfile
       name="uninstall"
-      title="collective.diazotheme.bootstrap"
+      title="uninstall collective.diazotheme.bootstrap"
       directory="profiles/uninstall"
       description="Uninstalls collective.diazotheme.bootstrap package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
