@@ -457,7 +457,7 @@ class HomepageView(BrowserView):
             
 
             objtitle = self.cropTitle(fulltitle, words)
-            modifydate = braindata[i].modified.strftime('%Y-%m-%d')
+            modifydate = braindata[i].created.strftime('%Y-%m-%d')
             
             out = """<li class="rollitem">
             <span>
@@ -501,7 +501,7 @@ class HomepageView(BrowserView):
         <a href="%(href)s">%(title)</a>
         </h4>    
         <div id="%(topid)s">
-        <div class="marquee" pause="%(pause)s" step="%(step)s" speed="%(speed)s" direction="%(direction)s">
+        <div class="marquee" data-pause="%(pause)s" data-step="%(step)s" data-speed="%(speed)s" data-direction="%(direction)s">
             <ul class="img"></ul>          
         </div>
         </div>  
@@ -802,6 +802,8 @@ class HomepageView(BrowserView):
         if ctobj is not None:
                 # pass on batching hints to the catalog
             braindata = ctobj[0].getObject().queryCatalog(batch=True, b_size=limit, sort_on="created")
+#             import pdb
+#             pdb.set_trace()
         else:           
             braindata = None
         return braindata        
