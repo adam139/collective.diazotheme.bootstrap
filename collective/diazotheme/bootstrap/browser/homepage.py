@@ -477,7 +477,10 @@ class HomepageView(BrowserView):
         """roll images js"""
   
         out="""$(document).ready(function(){ajaxfetchimg("%(topid)s","%(url)s",".%(mid)s",%(text)s);});"""
-        out=out % dict(topid=topid,url=imgsrc,mid=cssid,text=showtext)
+        out=out % dict(topid=parameters["topid"],
+                       url=parameters["ajaxsrc"],
+                       mid=parameters["cssid"],
+                       text=parameters["showtext"])
         return out           
         
     def roll_images(self,**parameters):
@@ -519,8 +522,8 @@ class HomepageView(BrowserView):
                          direction=parameters["direction"],
                          scripts=self.render_imgjs(topid=parameters["topid"],
                                                    url=parameters["ajaxsrc"],
-                                                   mid=parameters["mid"],
-                                                   text=parameters["text"])) 
+                                                   mid=parameters["cssid"],
+                                                   text=parameters["showtext"])) 
         return out            
         
 # outer html zone
