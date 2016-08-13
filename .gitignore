@@ -2,6 +2,7 @@
 /parts
 /develop-eggs
 /bin
+/node_modules
 /.settings
 *.pyc
 *.egg
