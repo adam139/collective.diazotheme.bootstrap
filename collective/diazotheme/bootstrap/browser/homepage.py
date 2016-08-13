@@ -449,6 +449,7 @@ class HomepageView(BrowserView):
         outhtml = """<div class="%s" data-pause="1000" data-step="1" data-speed="30" data-direction="up">
             <ul class="rolltext">
         """ % (self.rollwrapperclass())
+
         brainnum = len(braindata)
         if brainnum == 0 : return "roll zone"
         for i in range(brainnum):
