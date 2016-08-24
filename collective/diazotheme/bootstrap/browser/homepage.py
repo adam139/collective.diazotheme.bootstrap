@@ -800,14 +800,13 @@ class HomepageView(BrowserView):
         if not target_collection:
             return None
         queries = {'portal_type':'Collection','id':target_collection}
+
         ctobj = self.catalog()(queries)
-#         import pdb
-#         pdb.set_trace()
-        if ctobj is not None:
+
+        if bool(ctobj):
                 # pass on batching hints to the catalog
             braindata = ctobj[0].getObject().queryCatalog(batch=True, b_size=limit, sort_on="created")
-#             import pdb
-#             pdb.set_trace()
+
         else:           
             braindata = None
         return braindata        
