@@ -236,8 +236,6 @@ class HomepageView(BrowserView):
     def update(self):
         # Hide the editable-object border
         self.request.set('disable_border', True)
-        self.request.set('disable_plone.rightcolumn',1)
-        self.request.set('disable_plone.leftcolumn',1)        
     
     def show_more(self):
         return True
