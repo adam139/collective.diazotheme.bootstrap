@@ -4886,4 +4886,12 @@ body.template-logged_out #content-core .portletFooter {
 #search-filter input {
   margin-right: 0.5rem;
 }
+p {
+  text-indent: 2em;
+}
+.noindent {
+  text-indent: 0;
+  font-size: 150%;
+  font-weight: 400;
+}
 /*# sourceMappingURL=++theme++collective.diazotheme.bootstrap/less/barceloneta-compiled.css.map */
