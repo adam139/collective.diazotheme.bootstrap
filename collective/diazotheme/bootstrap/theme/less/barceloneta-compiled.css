@@ -4886,8 +4886,26 @@ body.template-logged_out #content-core .portletFooter {
 #search-filter input {
   margin-right: 0.5rem;
 }
-p {
+p,
+h3 {
   text-indent: 2em;
+}
+h4 {
+  text-indent: 4em;
+}
+h5 {
+  text-indent: 6em;
+}
+h6 {
+  text-indent: 8em;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+  font-weight: bold;
 }
 .noindent {
   text-indent: 0;
