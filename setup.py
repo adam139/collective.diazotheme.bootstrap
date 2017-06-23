@@ -26,6 +26,7 @@ setup(name='collective.diazotheme.bootstrap',
       install_requires=[
           'setuptools',
           'plone.app.theming',
+          'BeautifulSoup',
           'z3c.caching',   
           # -*- Extra requirements: -*-
       ],

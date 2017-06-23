@@ -4911,6 +4911,9 @@ h6 {
   text-align: left;
   font-weight: bold;
 }
+#homepage h4 {
+  text-indent: 0;
+}
 .noindent {
   text-indent: 0;
   font-size: 110%;
