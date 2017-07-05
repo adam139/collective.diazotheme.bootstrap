@@ -150,13 +150,23 @@
 				<div class="linkzone">
 				<ul class="govlink">
 					<li class="first"><a title="政府网站" href="#">政府网站：</a></li>
-					<li><a title="湖南湘潭民政" href="http://xiangtan.mca.gov.cn/">湖南湘潭民政</a></li>
-					<li><a title="中国湘潭网" href="http://www.xiangtan.gov.cn/new/index.html">中国湘潭网</a></li>
-					<li><a title="湖南民间组织信息网" href="http://hunanmjzz.mca.gov.cn/">湖南民间组织信息网</a></li>
-					<li><a title="中国社会组织" href="http://www.chinanpo.gov.cn/index.html">中国社会组织</a></li>
-					<li><a title="湘潭在线" href="http://www.xtol.cn/">湘潭在线</a></li>
-					<li><a title="红网论坛" href="http://bbs.rednet.cn/forum.php?fid=69&amp;mod=forumdisplay">红网论坛</a></li>
-					<li class="last"><a title="常德社会组织" href="http://www.changdenpo.org/">常德社会组织</a></li>
+					<li>
+						<a title="民政部" href="http://www.mca.gov.cn/">民政部</a>
+					</li>
+					<li>
+						<a title="中国社会组织网" href="http://www.chinanpo.gov.cn/">中国社会组织网</a>
+					</li>					
+					<li>
+						<a title="湖南省民政厅" href="http://mzt.hunan.gov.cn/">湖南省民政厅</a>
+					</li>
+                    <li><a title="湖南民间组织信息网" href="http://hunanmjzz.mca.gov.cn/">湖南民间组织信息网</a></li>															
+					<li>
+						<a title="湖南湘潭民政" href="http://xiangtan.mca.gov.cn/">湖南湘潭民政</a>
+					</li>
+					<li>
+						<a title="中国湘潭政府网" href="http://www.xiangtan.gov.cn/new/index.html">中国湘潭网</a>
+					</li>
+					<li class="last"><a title="湘潭在线" href="http://www.xtol.cn/">湘潭在线</a></li>
 				</ul>
 				<ul class="orglink">
 					<li class="first"><a title="协会网站" href="#">协会网站：</a></li>
