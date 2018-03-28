@@ -9,6 +9,7 @@
 *.egg-info
 *.pyo
 *.mo
+*.log
 .project
 .mr.developer.cfg
 .installed.cfg
