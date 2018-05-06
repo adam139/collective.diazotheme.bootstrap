@@ -326,7 +326,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #4d4d4d;
-  background-color: #fafafa;
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -428,13 +428,13 @@ h6 {
   margin-bottom: 10px;
 }
 h1 {
-  font-size: 36px;
+  font-size: 28px;
 }
 h2 {
-  font-size: 30px;
+  font-size: 23px;
 }
 h3 {
-  font-size: 24px;
+  font-size: 21px;
 }
 h4 {
   font-size: 18px;
@@ -1305,7 +1305,7 @@ th {
   border-top: 2px solid #e5e5e5;
 }
 .listing .listing {
-  background-color: #fafafa;
+  background-color: #ffffff;
 }
 .listing > tbody > tr:nth-child(odd) > td,
 .listing > tbody > tr:nth-child(odd) > th {
@@ -2590,7 +2590,7 @@ fieldset[disabled] .link-parent.active {
   position: absolute;
   display: inline-block;
   left: 5px;
-  font-size: 24px;
+  font-size: 21px;
   margin-top: -3px;
   line-height: 28px;
   font-weight: 100;
@@ -2638,7 +2638,7 @@ fieldset[disabled] .link-parent.active {
 .portlet .portletContent > ul > li a:before {
   content: "•";
   position: absolute;
-  font-size: 25px;
+  font-size: 22px;
   margin-top: -9px;
   left: 15px;
   color: #a7daf2;
@@ -2884,7 +2884,7 @@ fieldset[disabled] .link-parent.active {
   position: absolute;
   display: inline-block;
   left: 5px;
-  font-size: 24px;
+  font-size: 21px;
   margin-top: -3px;
   line-height: 28px;
   font-weight: 100;
@@ -2932,7 +2932,7 @@ fieldset[disabled] .link-parent.active {
 .managedPortlet .portletContent > ul > li a:before {
   content: "•";
   position: absolute;
-  font-size: 25px;
+  font-size: 22px;
   margin-top: -9px;
   left: 15px;
   color: #a7daf2;
@@ -3121,7 +3121,7 @@ fieldset[disabled] .link-parent.active {
 #portlet-prefs ul ul li a:before {
   content: "•";
   position: absolute;
-  font-size: 25px;
+  font-size: 22px;
   margin-top: -9px;
   left: 15px;
   color: #a7daf2;
@@ -3740,7 +3740,7 @@ ul.picker__list {
   position: absolute;
   background: #333333;
   background: rgba(0, 0, 0, 0.9);
-  color: #fafafa;
+  color: #ffffff;
   font-size: 12px;
   border-radius: 4px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.17);
@@ -4299,7 +4299,7 @@ body.template-logged_out #content-core.portletCalendar .portletHeader .calendarN
   position: absolute;
   display: inline-block;
   left: 5px;
-  font-size: 24px;
+  font-size: 21px;
   margin-top: -3px;
   line-height: 28px;
   font-weight: 100;
@@ -4358,7 +4358,7 @@ body.template-login_form #content-core .portletContent > ul > li a:before,
 body.template-logged_out #content-core .portletContent > ul > li a:before {
   content: "•";
   position: absolute;
-  font-size: 25px;
+  font-size: 22px;
   margin-top: -9px;
   left: 15px;
   color: #a7daf2;
@@ -4537,7 +4537,7 @@ body.template-logged_out #content-core .portletFooter {
 #portal-sitemap ul li:before {
   content: "•";
   display: inline;
-  font-size: 25px;
+  font-size: 22px;
   color: #a7daf2;
   top: 5px;
   position: relative;
@@ -4549,7 +4549,7 @@ body.template-logged_out #content-core .portletFooter {
   font-weight: 300;
   max-width: 300px;
   float: right;
-  background: #fafafa;
+  background: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.17);
   padding: 12px 12px 12px 36px;
   margin-left: 5px;
