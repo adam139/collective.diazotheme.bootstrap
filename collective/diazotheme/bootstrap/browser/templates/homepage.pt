@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -7,15 +7,10 @@
       i18n:domain="collective.conference">        
 
 <body>	
-<metal:main fill-slot="homepage">
+<metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
-    	 <div id="homepage" class="container homepage">
-    	 	 <div id="portal-top"            
-            tal:condition="not:ajax_load">
-					<div class="cell width-full position-0">
-            <div tal:replace="structure provider:plone.portaltop" />
-					</div>
-       </div>
+    	 <div id="homepage" class="container">
+
        <div class="row">         
          <div class="col-xs-12 col-md-4">
          	<div tal:content="structure python: view.carouselresult()">outer</div>        	

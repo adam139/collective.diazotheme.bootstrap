@@ -21,7 +21,7 @@
   <!-- -*- extra stuff goes here -*- -->
   <genericsetup:registerProfile
       name="registerless"
-      title="emctheme Theme - Register less resources as variables"
+      title="xtshzz Theme - Register less resources as variables"
       directory="profiles/registerless"
       description='This enables the compilation with the default scripts for custom Diazo themes.'
       provides="Products.GenericSetup.interfaces.EXTENSION"

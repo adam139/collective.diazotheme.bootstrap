@@ -13,6 +13,7 @@
   <browser:page
       for="Products.CMFCore.interfaces.ISiteRoot"
       name="homepage"
+      class=".homepage.HomepageView"
       permission="zope.Public"
       layer="collective.diazotheme.bootstrap.interfaces.IThemeSpecific"       
       template="templates/homepage.pt"
