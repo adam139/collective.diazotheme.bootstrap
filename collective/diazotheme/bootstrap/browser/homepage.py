@@ -3,8 +3,8 @@ from Acquisition import aq_inner
 from datetime import datetime
 from datetime import timedelta
 from my315ok.products.product import Iproduct
-from my315ok.socialorgnization import _
-from plone.app.collection.interfaces import ICollection
+# from my315ok.socialorgnization import _
+# from plone.app.collection.interfaces import ICollection
 from plone.memoize.instance import memoize
 from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
