@@ -17,12 +17,13 @@
     <before css:theme="title" css:content="base" />
     <!-- Title -->
     <replace css:theme="title" css:content="title" />
-    <!-- Pull in Plone Meta -->
-    <after css:theme-children="head" css:content="head meta" />
+
     <!-- Don't use Plone icons, use the theme's -->
     <drop css:content="head link[rel='apple-touch-icon']" />
     <drop css:content="head link[rel='shortcut icon']" />
     <drop css:content="head meta[name='generator']" />
+    <!-- Pull in Plone Meta -->
+    <after css:theme-children="head" css:content="head meta" />    
     <!-- CSS -->
     <after css:theme-children="head" css:content="head link" />
     <!-- Script -->

@@ -15,11 +15,12 @@
     <before css:theme="title" css:content="base" />
     <!-- Title -->
     <replace css:theme="title" css:content="title" />
-    <!-- Pull in Plone Meta -->
-    <after css:theme-children="head" css:content="head meta" />
+
     <!-- Don't use Plone icons, use the theme's -->
     <drop css:content="head link[rel='apple-touch-icon']" />
     <drop css:content="head link[rel='shortcut icon']" />
+    <!-- Pull in Plone Meta -->
+    <after css:theme-children="head" css:content="head meta" />    
     <!-- CSS -->
     <after css:theme-children="head" css:content="head link" />
     <!-- Script -->
@@ -106,7 +107,9 @@
       </div>
     </replace>
   </rules>
-
+  <rules css:if-not-content="#portal-column-one">
+    <drop css:theme="#column1-container"/>
+  </rules>
   <!-- Right column -->
   <rules css:if-content="#portal-column-two">
     <replace css:theme="#column2-container">
@@ -117,7 +120,9 @@
       </div>
     </replace>
   </rules>
-
+  <rules css:if-not-content="#portal-column-two">
+    <drop css:theme="#column2-container"/>
+  </rules>
   <!-- Content header -->
   <replace css:theme="#portal-top" css:content-children="#portal-top" />
 

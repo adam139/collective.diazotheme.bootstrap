@@ -24,8 +24,7 @@ class TestSetup(unittest.TestCase):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IThemeSettings)
         self.assertEqual(settings.enabled, True)
-        import pdb
-        pdb.set_trace()
+
         self.assertEqual(settings.rules, 
                 "/++theme++collective.diazotheme.bootstrap/rules.xml"
             )
